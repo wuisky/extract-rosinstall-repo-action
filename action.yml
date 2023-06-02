@@ -1,0 +1,18 @@
+name: 'extract rosintall repositories'
+author: 'wuisky'
+description: 'Github Action that extract repositories in *.rosinstall file and print out'
+branding:
+  icon: 'align-left'
+  color: 'green'
+inputs:
+  path:
+    description: 'Path to start recursive find *.rosinstall file'
+    required: false
+    default: '.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --path
+    - ${{ inputs.path }}
