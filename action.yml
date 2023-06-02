@@ -9,6 +9,9 @@ inputs:
     description: 'Path to start recursive find *.rosinstall file'
     required: false
     default: '.'
+outputs:
+  stdout:
+    description: 'The stdout output of the action'
 
 runs:
   using: 'docker'
