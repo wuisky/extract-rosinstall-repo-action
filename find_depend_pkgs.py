@@ -7,6 +7,9 @@ import yaml
 
 
 def find_files_with_extension(directory: str, extension: str) -> Generator:
+    if os.path.isfile(directory):
+        yield directory
+
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith(extension):
